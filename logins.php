@@ -1,6 +1,8 @@
 <?php
+session_start(); // Start the session
+
 // Check if the form is submitted
-if(isset($_POST['login_submit'])) {
+if (isset($_POST['login_submit'])) {
     // Retrieve the form data
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -26,16 +28,20 @@ if(isset($_POST['login_submit'])) {
 
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if($user) {
-            // Authentication successful, redirect the user to a logged-in page
-            header("Location: loggedin.php");
+        if ($user) {
+            // Authentication successful, redirect the user to the dashboard
+            $_SESSION['email'] = $email;
+            header("Location: dashboard.php");
             exit();
         } else {
             // Authentication failed, show an error message
             echo "Invalid email or password.";
         }
-    } catch(PDOException $e) {
+    } catch (PDOException $e) {
         echo "Connection failed: " . $e->getMessage();
     }
 }
 ?>
+
+<!-- Remaining HTML code -->
+
