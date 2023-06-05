@@ -12,7 +12,7 @@ if(isset($_POST['signup_submit'])) {
     $servername = "localhost";
     $username = "email";
     $password = "";
-    $database = "formlearning";
+    $database = "testlearning";
 
     // Create a new mysqli instance
     $conn = new mysqli($servername, $username, $password, $database);
@@ -27,8 +27,8 @@ if(isset($_POST['signup_submit'])) {
         // Registration successful, save the user to the database or perform other operations
 
         // Prepare and execute an SQL statement to insert the new user into the "users" table
-        $stmt = $conn->prepare("INSERT INTO users (email, password) VALUES (?, ?)");
-        $stmt->bind_param("ss", $email, $password);
+        $stmt = $conn->prepare("INSERT INTO form (email, password, confirm_password) VALUES (?, ?)");
+        $stmt->bind_param("id", $email, $password, $confirmPassword);
         $stmt->execute();
 
         // Redirect the user to a success page or show a success message
