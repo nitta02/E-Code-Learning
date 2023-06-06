@@ -54,36 +54,15 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link">Home</a>
-                <a href="courses.html" class="nav-item nav-link active">Courses</a>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="index.php" class="nav-item nav-link">Home</a>
+                <a href="courses.php" class="nav-item nav-link active">Courses</a>
+                <a href="contact.php" class="nav-item nav-link">Contact</a>
             </div>
-            <a href="login.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i
+            <a href="registration.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i
                     class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </nav>
     <!-- Navbar End -->
-
-
-    <!-- Header Start -->
-    <!-- <div class="container-fluid bg-primary py-5 mb-5 page-header">
-        <div class="container py-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 text-center">
-                    <h1 class="display-3 text-white animated slideInDown">Courses</h1>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">Courses</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Header End -->
-
 
     <!-- Courses Start -->
     <div class="container-xxl py-5">

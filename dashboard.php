@@ -179,9 +179,7 @@
             </div>
             <div class="menu">
                 <a href="#" class="active">Dashboard</a>
-                <a href="#">My Courses</a>
-                <a href="#">Settings</a>
-                <a href="#">Support</a>
+                <a href="course_page.php">My Courses</a>
             </div>
         </aside>
         <div class="content">

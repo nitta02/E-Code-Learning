@@ -54,9 +54,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
-                <a href="courses.html" class="nav-item nav-link">Courses</a>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="index.php" class="nav-item nav-link active">Home</a>
+                <a href="courses.php" class="nav-item nav-link">Courses</a>
+                <a href="contact.php" class="nav-item nav-link">Contact</a>
             </div>
             <a href="registration.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Register<i
                     class="fa fa-arrow-right ms-3"></i></a>

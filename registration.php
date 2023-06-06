@@ -12,16 +12,16 @@ if (isset($_POST['login_submit'])) {
     // Example: Establish a connection to the database
     $servername = "localhost";
     $username = "root";
-    $password = "";
+    $db_password = ""; // Update with your database password
     $database = "testlearning";
 
     // Create a new PDO instance
     try {
-        $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
+        $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $db_password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // Example validation: Check if the email and password are correct
-        $stmt = $conn->prepare("SELECT * FROM users WHERE email = :email AND password = :password");
+        $stmt = $conn->prepare("SELECT * FROM form WHERE email = :email AND password = :password");
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':password', $password);
         $stmt->execute();
@@ -52,11 +52,11 @@ if (isset($_POST['login_submit'])) {
     // Example: Establish a connection to the database using mysqli
     $servername = "localhost";
     $username = "root";
-    $password = "";
+    $db_password = ""; // Update with your database password
     $database = "testlearning";
 
     // Create a new mysqli instance
-    $conn = new mysqli($servername, $username, $password, $database);
+    $conn = new mysqli($servername, $username, $db_password, $database);
 
     // Check the connection
     if ($conn->connect_error) {
@@ -68,7 +68,7 @@ if (isset($_POST['login_submit'])) {
         // Registration successful, save the user to the database or perform other operations
 
         // Prepare and execute an SQL statement to insert the new user into the "users" table
-        $stmt = $conn->prepare("INSERT INTO users (email, password) VALUES (?, ?)");
+        $stmt = $conn->prepare("INSERT INTO form (email, password) VALUES (?, ?)");
         $stmt->bind_param("ss", $email, $password);
         $stmt->execute();
 
@@ -119,7 +119,7 @@ if (isset($_POST['login_submit'])) {
             <div class="slider-tab"></div>
          </div>
          <div class="form-inner">
-            <form action="#" class="login">
+            <form action="#" class="login" method="POST">
                <div class="field">
                   <input type="text" name="email" placeholder="Email Address" required>
                </div>
