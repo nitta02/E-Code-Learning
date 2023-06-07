@@ -31,6 +31,32 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function addToDashboard(courseId) {
+            // Perform the necessary steps to add the course to the dashboard
+            // You can use AJAX or any other method to communicate with the server and update the dashboard
+            // Example: Send an AJAX request to a server-side script to add the course to the user's dashboard
+            // Here's a basic example using jQuery AJAX:
+            $.ajax({
+                url: 'add_course_to_dashboard.php', // Replace with the actual URL or server-side script
+                method: 'POST',
+                data: { courseId: courseId },
+                success: function(response) {
+                    // Handle the success response
+                    console.log('Course added to the dashboard');
+                    // Optionally, you can update the UI to reflect the changes
+                },
+                error: function(xhr, status, error) {
+                    // Handle the error
+                    console.log('Error adding the course to the dashboard:', error);
+                    // Optionally, you can display an error message to the user
+                }
+            });
+            // Redirect to the dashboard page
+            window.location.href = 'dashboard.php';
+        }
+    </script>
 </head>
 
 <body>
@@ -54,36 +80,15 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link">Home</a>
-                <a href="courses.html" class="nav-item nav-link active">Courses</a>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="index.php" class="nav-item nav-link">Home</a>
+                <a href="courses.php" class="nav-item nav-link active">Courses</a>
+                <a href="contact.php" class="nav-item nav-link">Contact</a>
             </div>
-            <a href="login.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i
+            <a href="registration.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i
                     class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </nav>
     <!-- Navbar End -->
-
-
-    <!-- Header Start -->
-    <!-- <div class="container-fluid bg-primary py-5 mb-5 page-header">
-        <div class="container py-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 text-center">
-                    <h1 class="display-3 text-white animated slideInDown">Courses</h1>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">Courses</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Header End -->
-
 
     <!-- Courses Start -->
     <div class="container-xxl py-5">
@@ -98,10 +103,9 @@
                         <div class="position-relative overflow-hidden">
                             <img class="img-fluid" src="img/web.jpeg" alt="">
                             <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                                <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end"
+                                <a href="course_details.php" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end"
                                     style="border-radius: 30px 0 0 30px;">Read More</a>
-                                <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3"
-                                    style="border-radius: 0 30px 30px 0;">Join Now</a>
+                                    <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3" onclick="addToDashboard('course_id')">Purchase</a>
                             </div>
                         </div>
                         <div class="text-center p-4 pb-0">
@@ -114,7 +118,7 @@
                                 <small class="fa fa-star text-primary"></small>
                                 <small>(23)</small>
                             </div>
-                            <h5 class="mb-4">Web Design Course for Beginners</h5>
+                            <h5 class="mb-4">C programming</h5>
                         </div>
                         <div class="d-flex border-top">
                             <small class="flex-fill text-center border-end py-2"><i
@@ -134,7 +138,7 @@
                                 <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end"
                                     style="border-radius: 30px 0 0 30px;">Read More</a>
                                 <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3"
-                                    style="border-radius: 0 30px 30px 0;">Join Now</a>
+                                    style="border-radius: 0 30px 30px 0;">Purchase</a>
                             </div>
                         </div>
                         <div class="text-center p-4 pb-0">
@@ -147,7 +151,7 @@
                                 <small class="fa fa-star text-primary"></small>
                                 <small>(23)</small>
                             </div>
-                            <h5 class="mb-4">Software Testing Course for Beginners</h5>
+                            <h5 class="mb-4">C++ programming</h5>
                         </div>
                         <div class="d-flex border-top">
                             <small class="flex-fill text-center border-end py-2"><i
@@ -167,7 +171,7 @@
                                 <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end"
                                     style="border-radius: 30px 0 0 30px;">Read More</a>
                                 <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3"
-                                    style="border-radius: 0 30px 30px 0;">Join Now</a>
+                                    style="border-radius: 0 30px 30px 0;">Purchase</a>
                             </div>
                         </div>
                         <div class="text-center p-4 pb-0">
@@ -180,7 +184,7 @@
                                 <small class="fa fa-star text-primary"></small>
                                 <small>(23)</small>
                             </div>
-                            <h5 class="mb-4">Software Testing Course for Beginners</h5>
+                            <h5 class="mb-4">Python programming</h5>
                         </div>
                         <div class="d-flex border-top">
                             <small class="flex-fill text-center border-end py-2"><i
@@ -202,7 +206,7 @@
                                     <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end"
                                         style="border-radius: 30px 0 0 30px;">Read More</a>
                                     <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3"
-                                        style="border-radius: 0 30px 30px 0;">Join Now</a>
+                                        style="border-radius: 0 30px 30px 0;">Purchase</a>
                                 </div>
                             </div>
                             <div class="text-center p-4 pb-0">
@@ -215,7 +219,7 @@
                                     <small class="fa fa-star text-primary"></small>
                                     <small>(23)</small>
                                 </div>
-                                <h5 class="mb-4">Web Design Course for Beginners</h5>
+                                <h5 class="mb-4">Web Developmnent</h5>
                             </div>
                             <div class="d-flex border-top">
                                 <small class="flex-fill text-center border-end py-2"><i
@@ -236,7 +240,7 @@
                                     <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end"
                                         style="border-radius: 30px 0 0 30px;">Read More</a>
                                     <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3"
-                                        style="border-radius: 0 30px 30px 0;">Join Now</a>
+                                        style="border-radius: 0 30px 30px 0;">Purchase</a>
                                 </div>
                             </div>
                             <div class="text-center p-4 pb-0">
@@ -249,7 +253,7 @@
                                     <small class="fa fa-star text-primary"></small>
                                     <small>(23)</small>
                                 </div>
-                                <h5 class="mb-4">Software Testing Course for Beginners</h5>
+                                <h5 class="mb-4">Swift programming</h5>
                             </div>
                             <div class="d-flex border-top">
                                 <small class="flex-fill text-center border-end py-2"><i
@@ -270,7 +274,7 @@
                                     <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end"
                                         style="border-radius: 30px 0 0 30px;">Read More</a>
                                     <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3"
-                                        style="border-radius: 0 30px 30px 0;">Join Now</a>
+                                        style="border-radius: 0 30px 30px 0;">Purchase</a>
                                 </div>
                             </div>
                             <div class="text-center p-4 pb-0">
@@ -283,7 +287,7 @@
                                     <small class="fa fa-star text-primary"></small>
                                     <small>(23)</small>
                                 </div>
-                                <h5 class="mb-4">Software Testing Course for Beginners</h5>
+                                <h5 class="mb-4">Native Android Developmnent</h5>
                             </div>
                             <div class="d-flex border-top">
                                 <small class="flex-fill text-center border-end py-2"><i
@@ -318,7 +322,7 @@
                                         <small class="fa fa-star text-primary"></small>
                                         <small>(23)</small>
                                     </div>
-                                    <h5 class="mb-4">Web Design Course for Beginners</h5>
+                                    <h5 class="mb-4">Android Developmnent</h5>
                                 </div>
                                 <div class="d-flex border-top">
                                     <small class="flex-fill text-center border-end py-2"><i
@@ -340,7 +344,7 @@
                                         <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end"
                                             style="border-radius: 30px 0 0 30px;">Read More</a>
                                         <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3"
-                                            style="border-radius: 0 30px 30px 0;">Join Now</a>
+                                            style="border-radius: 0 30px 30px 0;">Purchase</a>
                                     </div>
                                 </div>
                                 <div class="text-center p-4 pb-0">
@@ -353,7 +357,7 @@
                                         <small class="fa fa-star text-primary"></small>
                                         <small>(23)</small>
                                     </div>
-                                    <h5 class="mb-4">Software Testing Course for Beginners</h5>
+                                    <h5 class="mb-4">Backend Developmnent</h5>
                                 </div>
                                 <div class="d-flex border-top">
                                     <small class="flex-fill text-center border-end py-2"><i
@@ -375,7 +379,7 @@
                                         <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end"
                                             style="border-radius: 30px 0 0 30px;">Read More</a>
                                         <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3"
-                                            style="border-radius: 0 30px 30px 0;">Join Now</a>
+                                            style="border-radius: 0 30px 30px 0;">Purchase</a>
                                     </div>
                                 </div>
                                 <div class="text-center p-4 pb-0">
@@ -388,7 +392,7 @@
                                         <small class="fa fa-star text-primary"></small>
                                         <small>(23)</small>
                                     </div>
-                                    <h5 class="mb-4">Software Testing Course for Beginners</h5>
+                                    <h5 class="mb-4">Learn mySql, php</h5>
                                 </div>
                                 <div class="d-flex border-top">
                                     <small class="flex-fill text-center border-end py-2"><i
@@ -401,7 +405,6 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -438,6 +441,10 @@
 
             <!-- Template Javascript -->
             <script src="js/main.js"></script>
+
+            <<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
 </body>
 
 </html>
