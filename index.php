@@ -212,7 +212,7 @@
                                 <small class="fa fa-star text-primary"></small>
                                 <small>(65)</small>
                             </div>
-                            <h5 class="mb-4">Web Design Course for Beginners</h5>
+                            <h5 class="mb-4">Web Development</h5>
                         </div>
                         <div class="d-flex border-top">
                             <small class="flex-fill text-center border-end py-2"><i
@@ -245,7 +245,7 @@
                                 <small class="fa fa-star text-primary"></small>
                                 <small>(55)</small>
                             </div>
-                            <h5 class="mb-4">Graphic Design Course for Beginners</h5>
+                            <h5 class="mb-4">C++ programming</h5>
                         </div>
                         <div class="d-flex border-top">
                             <small class="flex-fill text-center border-end py-2"><i
@@ -278,7 +278,7 @@
                                 <small class="fa fa-star text-primary"></small>
                                 <small>(23)</small>
                             </div>
-                            <h5 class="mb-4">Web Development Course for Beginners</h5>
+                            <h5 class="mb-4">Android Development</h5>
                         </div>
                         <div class="d-flex border-top">
                             <small class="flex-fill text-center border-end py-2"><i

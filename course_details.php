@@ -32,7 +32,7 @@
         }
 
         header {
-            background-color: #333;
+            background-color: #06BBCC !important;
             color: #fff;
             padding: 20px;
             text-align: center;
@@ -131,46 +131,62 @@
         }
     </style>
 </head>
-
 <body>
     <header>
         <div class="container">
             <h1>Course Details</h1>
+            <nav>
+                <a href="index.php">Home</a>
+            </nav>
         </div>
     </header>
     <main>
         <div class="course-info">
-            <img src="course-thumbnail.jpg" alt="Course Thumbnail">
+            <img src="img/web.jpeg" alt="Course Thumbnail">
             <div class="course-description">
                 <h2>Course Title</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis condimentum auctor dui, eu congue
-                    turpis placerat non.</p>
+                <p>Learn the mother language of programming 'C'.</p>
             </div>
         </div>
         <div class="course-links">
             <a href="#">Course Content</a>
             <a href="#">Instructor Bio</a>
             <div class="reviews">
-        <h2>Reviews</h2>
-        <?php
-        // Retrieve feedback from the "feedback" table
-        $sql = "SELECT feedback_text FROM feedback";
-        $result = $conn->query($sql);
+                <h2>Reviews</h2>
+                <?php
+                // Database credentials
+                $servername = "localhost";
+                $username = "root";
+                $password = "";
+                $dbname = "testlearning";
 
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $feedback = $row["feedback_text"];
-                echo '<div class="review">';
-                echo $feedback;
-                echo '</div>';
-            }
-        } else {
-            echo 'No reviews available.';
-        }
-        ?>
-    </div>
-            
-            <a href="#">FAQ</a>
+                // Create a connection
+                $conn = new mysqli($servername, $username, $password, $dbname);
+
+                // Check connection
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
+                }
+
+                // Retrieve feedback from the "feedback" table
+                $sql = "SELECT feedback_text FROM feedback";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $feedback = $row["feedback_text"];
+                        echo '<div class="review">';
+                        echo $feedback;
+                        echo '</div>';
+                    }
+                } else {
+                    echo 'No reviews available.';
+                }
+
+                // Close the connection
+                $conn->close();
+                ?>
+            </div>
         </div>
         <a href="#" class="certificate-button">Get Certificate</a>
         <div class="video-player">
@@ -181,5 +197,4 @@
         <p>&copy; 2023 Ecode Learning. All rights reserved.</p>
     </footer>
 </body>
-
 </html>

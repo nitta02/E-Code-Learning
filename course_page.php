@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,7 +46,7 @@
         }
 
         header {
-            background-color: #333;
+            background-color: #06BBCC !important;
             color: #fff;
             padding: 20px;
             text-align: center;
