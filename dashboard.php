@@ -193,47 +193,48 @@
         <p>&copy; 2023 Ecode Learning. All rights reserved.</p>
     </footer>
     <script>
-        // Define an array to store the purchased courses
-        var purchasedCourses = [];
+    // Define an array to store the purchased courses
+    var purchasedCourses = [];
 
-        // Function to generate the course elements dynamically
-        function generateCourseElements() {
-            var courseListElement = document.querySelector(".course-list");
+    // Function to generate the course elements dynamically
+    function generateCourseElements() {
+        var courseListElement = document.querySelector(".course-list");
 
-            // Clear the existing course elements
-            courseListElement.innerHTML = "";
+        // Clear the existing course elements
+        courseListElement.innerHTML = "";
 
-            // Iterate over the purchasedCourses array to create and append the course elements
-            purchasedCourses.forEach(function (course) {
-                var courseElement = document.createElement("div");
-                courseElement.classList.add("course");
+        // Iterate over the purchasedCourses array to create and append the course elements
+        purchasedCourses.forEach(function (course) {
+            var courseElement = document.createElement("div");
+            courseElement.classList.add("course");
 
-                var imgElement = document.createElement("img");
-                imgElement.src = course.imgSrc;
-                imgElement.alt = course.title;
-                courseElement.appendChild(imgElement);
+            var imgElement = document.createElement("img");
+            imgElement.src = course.imgSrc;
+            imgElement.alt = course.title;
+            courseElement.appendChild(imgElement);
 
-                var h2Element = document.createElement("h2");
-                h2Element.textContent = course.title;
-                courseElement.appendChild(h2Element);
+            var h2Element = document.createElement("h2");
+            h2Element.textContent = course.title;
+            courseElement.appendChild(h2Element);
 
-                var pElement = document.createElement("p");
-                pElement.textContent = course.description;
-                courseElement.appendChild(pElement);
+            var pElement = document.createElement("p");
+            pElement.textContent = course.description;
+            courseElement.appendChild(pElement);
 
-                courseListElement.appendChild(courseElement);
-            });
-        }
+            courseListElement.appendChild(courseElement);
+        });
+    }
 
-        // Check if there are any purchased courses stored in the local storage
-        var storedCourses = localStorage.getItem("purchasedCourses");
-        if (storedCourses) {
-            purchasedCourses = JSON.parse(storedCourses);
-        }
+    // Check if there are any purchased courses stored in the local storage
+    var storedCourses = localStorage.getItem("purchasedCourses");
+    if (storedCourses) {
+        purchasedCourses = JSON.parse(storedCourses);
+    }
 
-        // Call the function to generate the course elements on page load
-        generateCourseElements();
-    </script>
+    // Call the function to generate the course elements on page load
+    generateCourseElements();
+</script>
+
 </body>
 
 </html>

@@ -39,20 +39,18 @@
             // Example: Send an AJAX request to a server-side script to add the course to the user's dashboard
             // Here's a basic example using jQuery AJAX:
             $.ajax({
-                url: 'add_course_to_dashboard.php', // Replace with the actual URL or server-side script
-                method: 'POST',
-                data: { courseId: courseId },
-                success: function(response) {
-                    // Handle the success response
-                    console.log('Course added to the dashboard');
-                    // Optionally, you can update the UI to reflect the changes
-                },
-                error: function(xhr, status, error) {
-                    // Handle the error
-                    console.log('Error adding the course to the dashboard:', error);
-                    // Optionally, you can display an error message to the user
-                }
-            });
+    url: 'purchase.php',
+    method: 'POST',
+    data: { courseId: courseId },
+    success: function(response) {
+        console.log('Purchase data saved to the database');
+        // Optionally, you can display a success message to the user
+    },
+    error: function(xhr, status, error) {
+        console.log('Error saving purchase data:', error);
+        // Optionally, you can display an error message to the user
+    }
+});
             // Redirect to the dashboard page
             window.location.href = 'dashboard.php';
         }
